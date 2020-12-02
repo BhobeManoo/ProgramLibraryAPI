@@ -1,0 +1,42 @@
+
+CREATE DATABASE ModernHealth;
+
+USE DATABASE ModernHealth;
+
+CREATE TABLE  program(
+id INT NOT NULL AUTO_INCREMENT,
+name VARCHAR(100) NOT NULL,
+description VARCHAR(255) NULL,
+imageurl VARCHAR(255) NULL,
+PRIMARY KEY (id));
+
+CREATE TABLE  section(
+id INT NOT NULL AUTO_INCREMENT,
+name VARCHAR(100) NOT NULL,
+description VARCHAR(255) NULL,
+program_id INT NOT NULL,
+imageurl VARCHAR(255) NULL,
+PRIMARY KEY (id),
+FOREIGN KEY (program_id) REFERENCES program(id));
+
+CREATE TABLE activity(
+id INT NOT NULL AUTO_INCREMENT,
+text VARCHAR(255) NOT NULL,
+section_id INT NOT NULL,
+PRIMARY KEY (id),
+foreign key(section_id) references section(id));
+
+CREATE TABLE activity_questionnaire(
+id INT NOT NULL AUTO_INCREMENT,
+question  VARCHAR(255) NOT NULL,
+activity_id INT NOT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY (activity_id) REFERENCES activity(id));
+
+CREATE TABLE activity_questionnaire_option_list(
+id INT NOT NULL AUTO_INCREMENT,
+questionnaire_option VARCHAR(100) NOT NULL,
+activity_questionnaire_id INT NOT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY(activity_questionnaire_id) REFERENCES activity_questionnaire(id));
+

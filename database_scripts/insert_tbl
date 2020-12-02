@@ -1,0 +1,46 @@
+USE DATABASE ModernHealth;
+
+
+
+INSERT INTO program (name,description,imageurl) VALUES('Leadership Development Program' , 'description of Leadership Development Program' ,'image url for Leadership Development Program'),('Cognitive Behavioral Therapy' , 'description of Cognitive Behavioral Therapy' ,'image url for Cognitive Behavioral Therapy'),('New Parenting' , 'description of New Parenting' ,'image url for New Parenting'),('Mindful Communication' , 'description of Mindful Communication' ,'image url for Mindful Communication');
+
+
+
+Insert into section (name, description,program_id,imageurl) values 
+('Leadership section1', 'Leadership section1 description',1,'Leadership section1 url'),
+('Leadership section2', 'Leadership section2 description',1,'Leadership section2 url'),
+('Leadership section3', 'Leadership section3 description',1,'Leadership section3 url'),
+('Leadership section4', 'Leadership section4 description',1,'Leadership section4 url'),
+
+('Behavioral section1', 'Behavioral section1 description',2,'Behavioral section1 url'),
+('Behavioral section2', 'Behavioral section2 description',2,'Behavioral section2 url'),
+('Behavioral section3', 'Behavioral section3 description',2,'Behavioral section3 url'),
+('Behavioral section4', 'Behavioral section4 description',2,'Behavioral section4 url'),
+
+('Parenting section1', 'Parenting section1 description',3,'Parenting section1 url'),
+('Parenting section2', 'Parenting section2 description',3,'Parenting section2 url'),
+('Parenting section3', 'Parenting section3 description',3,'Parenting section3 url'),
+
+
+('Communication section1', 'Communication section1 description',4,'Communication section1 url'),
+('Communication section2', 'Communication section2 description',4,'Communication section2 url');
+
+
+insert into activity (text, section_id) values('Leadership activity1',1),('Leadership activity2',1),('Leadership activity3',1),
+('Leadership activity1',2),('Leadership activity2',2),
+('Leadership activity1',3),
+('Leadership activity1',4),('Leadership activity2',4),('Leadership activity3',4),('Leadership activity4',4),
+('Parenting activity1',9),('Parenting activity2',9),('Parenting activity3',9),
+('Parenting activity1',10),('Parenting activity2',10),
+('Parenting activity1',11);
+
+insert into activity_questionnaire (question, section_id) values ('how to improve leadership qualities', 1),('how to improve Parenting qualities', 6);
+
+insert into activity_questionnaire_option_list (questionnaire_option,activity_questionnaire_id) values('keep learning',1),('manage time',1),('mental clearity',1),('increase focus',1),('have patience',2),('mental clearity',2);
+
+insert into activity_questionnaire (question, section_id) values ('how to be an effective leader',1)
+
+insert into  activity_questionnaire_option_list (questionnaire_option,activity_questionnaire_id) values('keep learning',3),('manage time',3);
+
+
+					
